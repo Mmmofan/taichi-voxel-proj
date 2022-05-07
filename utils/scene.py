@@ -1,11 +1,13 @@
 import time
 import os
+import __main__
 from datetime import datetime
+
 import numpy as np
 import taichi as ti
-from renderer import Renderer
-from math_utils import np_normalize, np_rotate_matrix
-import __main__
+
+from .renderer import Renderer
+from .math_utils import np_normalize, np_rotate_matrix
 
 
 VOXEL_DX = 1 / 64

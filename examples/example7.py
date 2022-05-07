@@ -1,4 +1,10 @@
-from scene import Scene; import taichi as ti; from taichi.math import *
+import sys
+from os import path as p
+
+sys.path.insert(0, p.join(p.dirname(__file__), '..'))
+
+from utils.scene import Scene; import taichi as ti; from taichi.math import *
+
 day = True; manual_seed = 77
 scene = Scene(voxel_edges=0, exposure=2 - day)
 scene.set_floor(-0.05, (1.0, 1.0, 1.0))
@@ -56,7 +62,7 @@ def build_building(X, uv, d, r):
             if (uv.x == 2 or uv.x == 12) and (uv.y == 2 or uv.y == 12) or style>0.5 and (uv.x%3==1 or uv.y%3==1):
                 scene.set_voxel(vec3(X.x, i, X.y), 1, wall)
         if maxdist < 5:  scene.set_voxel(vec3(X.x, i, X.y), mix(1, 2, i%4<2), mix(wall, light, i%4<2))
-    if maxdist == 5: 
+    if maxdist == 5:
         for i in range(fl*4, fl*4+2): scene.set_voxel(vec3(X.x, i, X.y), 1, wall) # roof
     if maxdist < 5: scene.set_voxel(vec3(X.x, fl*4, X.y), 1, vec3(rand(r, 7)*0.2+0.4))
     for i in range(2): scene.set_voxel(vec3(X.x, i, X.y), 1, vec3(0.7, 0.65, 0.6)) # sidewalk
@@ -66,8 +72,8 @@ def build_building(X, uv, d, r):
     if d.sum() > 0 and uv.y == 2 and 4 < uv.x < 10: # billboard
         for i in range(5, 7):
             scene.set_voxel(vec3(X.x,i,X.y), 2, vec3(int(r*3)==0,int(r*3)==1,int(r*3)==2)*(0.2+ti.random()*0.3))
-        for i in range(2, 5): scene.set_voxel(vec3(X.x,i,X.y), 0, vec3(0)) 
-    if d.sum() > 0 and uv.y == 3 and 4 < uv.x < 10: 
+        for i in range(2, 5): scene.set_voxel(vec3(X.x,i,X.y), 0, vec3(0))
+    if d.sum() > 0 and uv.y == 3 and 4 < uv.x < 10:
         for i in range(2, 5): scene.set_voxel(vec3(X.x,i,X.y), 1, vec3(0.7,0.7,0.6))
     if max(abs(uv.x - rand(r, 8)*7-4), abs(uv.y - rand(r, 10)*7-4)) < 1.5: # HVAC
         for i in range(fl*4+1, fl*4+3): scene.set_voxel(vec3(X.x, i, X.y), 1, vec3(0.6))

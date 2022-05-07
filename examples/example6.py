@@ -1,6 +1,11 @@
 # Reference: https://www.pinterest.com/antonioua1340/voxel/
 
-from scene import Scene
+import sys
+from os import path as p
+
+sys.path.insert(0, p.join(p.dirname(__file__), '..'))
+
+from utils.scene import Scene
 import taichi as ti
 from taichi.math import *
 

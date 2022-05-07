@@ -1,4 +1,9 @@
-from scene import Scene
+import sys
+from os import path as p
+
+sys.path.insert(0, p.join(p.dirname(__file__), '..'))
+
+from utils.scene import Scene
 import taichi as ti
 from taichi.math import *
 
@@ -14,7 +19,7 @@ scene.set_background_color(vec3(0.6, 0.8, 1.0) / exposure)
 
 @ti.func
 def create_ocean_base(pos, size, color):
-    for ik in ti.grouped(ti.ndrange((0, size[0]), (0, size[2]))):    
+    for ik in ti.grouped(ti.ndrange((0, size[0]), (0, size[2]))):
         t, r = ((ti.sin(ik[0] / 23.0 * 3.14) * ti.sin(ik[1] / 27.0 * 3.14) + 1) / 2.0), ti.random()
         h = (t - 0.1 * r)* size[1] + (1 - t + 0.1 * r) * size[1] / 2
         for j in range(int(h)):
@@ -28,7 +33,7 @@ def create_wave(pos, radius, color, portion, flipped):
         uv = vec2(I[0], I[1]) / radius
         theta = ti.atan2(uv[1], uv[0]) / 3.14 * 2
         offset = I
-        offset[0] *=  1 - flipped * 2        
+        offset[0] *=  1 - flipped * 2
         if theta >= 0 and theta <= portion:
             if abs(uv.norm() - 0.95) < 0.05 + 0.05 *ti.random():
                 if 1 - ti.random()**2 < theta / portion - 0.1:
@@ -54,7 +59,7 @@ def initialize_voxels():
 
     create_wave(ivec3(-20, -15, 15), 20, vec3(0.2, 0.4, 1.0), 0.7, True)
     create_wave(ivec3(-57, -15, 15), 20, vec3(0.2, 0.4, 1.0), 0.0, False)
-    
+
     create_wave(ivec3(20, -15, -39), 20, vec3(0.2, 0.4, 1.0), 0.56, False)
     create_wave(ivec3(57, -15, -39), 20, vec3(0.2, 0.4, 1.0), 0.0, True)
 
