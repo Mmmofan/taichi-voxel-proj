@@ -1,12 +1,12 @@
 # <a name="title">Taichi Voxel Challenge</a>
 
+## Challenge Work Screenshot
 <p align="center">
-<img src=".imgs/demo.jpg" width="75%"></img>
+<img src="screenshot/they-were-locked-down.jpg" width="75%"></img>
 </p>
 
-> Figure: result of `python3 example6.py`. Please replace the image above (`demo.jpg`) with yours, so that other people can immediately see your results :-)
-
-We invite you to create your voxel artwork, by putting your [Taichi](https://github.com/taichi-dev/taichi) code in `main.py`!
+---
+We invite you to create your voxel artwork, by putting your [Taichi](https://github.com/taichi-dev/taichi) code in `main.py`
 
 Rules:
 
