@@ -1,9 +1,18 @@
 # <a name="title">Taichi Voxel Challenge</a>
 
 ## Challenge Work Screenshot
+ - Name: 窗外 (Outside of the Window)
+
+### Final work
 <p align="center">
-<img src="screenshot/they-were-locked-down.jpg" width="75%"></img>
+<img src="demo.jpg" width="75%"></img>
 </p>
+
+### Instruments
+<figure class="half">
+<img src="instruments0.jpg" width="45%">
+<img src="instruments1.jpg" width="45%">
+</figure>
 
 ---
 We invite you to create your voxel artwork, by putting your [Taichi](https://github.com/taichi-dev/taichi) code in `main.py`
