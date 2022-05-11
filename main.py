@@ -6,6 +6,7 @@ scene = Scene(voxel_edges=0, exposure=2)
 scene.set_floor(-1, (1.0, 1.0, 1.0))
 scene.set_background_color((0.5, 0.5, 0.4))
 scene.set_directional_light((1, 1, -1), 0.2, (0.1, 0.1, 0.1))
+# scene.set_directional_light((1, 1, -1), 0.2, (1, 0.8, 0.6))
 
 @ti.func
 def create_block(pos, size, color, color_noise=vec3(0.0), lt=1):
@@ -78,11 +79,12 @@ def initialize_voxels():
     create_light(ivec3(-55, -61, 0), vec3(110, 1, 1)); create_light(ivec3(54, -61, -45), vec3(1, 1, 45)) # f light
     create_light(ivec3(-55, -61, -45), vec3(1, 1, 45)); create_light(ivec3(-55, -61, -45), vec3(110, 1, 1)) # f light
     create_light(ivec3(-61, 58, -60), ivec3(1, 1, 120)); create_light(ivec3(-61, 58, -59), ivec3(120, 1, 1)) # top
-    create_light(ivec3(-30, 45, -58), ivec3(11, 1, 1)); create_light(ivec3(-30, 35, -58), ivec3(10, 1, 1)) # S
-    create_light(ivec3(-30, 25, -58), ivec3(10, 1, 1)); create_light(ivec3(-30, 35, -58), ivec3(1, 10, 1))
-    create_light(ivec3(-20, 25, -58), ivec3(1, 10, 1)); create_light(ivec3(-20, 43, -58), ivec3(1, 2, 1))
-    create_light(ivec3(-30, 26, -58), ivec3(1, 2, 1)); create_light(ivec3(0, 25, -58), ivec3(1, 21, 1)) # H
-    create_light(ivec3(10, 25, -58), ivec3(1, 21, 1)); create_light(ivec3(0, 35, -58), ivec3(10, 1, 1))
+    create_light(ivec3(-61, 58, 60), ivec3(120, 1, 1)); create_light(ivec3(59, 58, -59), ivec3(1, 1, 120))
+    create_light(ivec3(-27, 45, -58), ivec3(11, 1, 1)); create_light(ivec3(-27, 35, -58), ivec3(10, 1, 1)) # S
+    # create_light(ivec3(-27, 25, -58), ivec3(10, 1, 1)); create_light(ivec3(-27, 35, -58), ivec3(1, 10, 1))
+    # create_light(ivec3(-17, 25, -58), ivec3(1, 10, 1)); create_light(ivec3(-17, 43, -58), ivec3(1, 2, 1))
+    create_light(ivec3(-27, 26, -58), ivec3(1, 2, 1)); create_light(ivec3(-3, 25, -58), ivec3(1, 21, 1)) # H
+    # create_light(ivec3(7, 25, -58), ivec3(1, 21, 1)); create_light(ivec3(-3, 35, -58), ivec3(10, 1, 1)) # H
     create_block(ivec3(-35, 20, -59), ivec3(50, 30, 1), vec3(0.2, 0.6, 0.4), vec3(0.01))
 
 initialize_voxels()
