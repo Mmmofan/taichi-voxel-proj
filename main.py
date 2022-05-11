@@ -49,16 +49,16 @@ def initialize_voxels():
     for i in range(2):
         create_block(ivec3(-64, -64 + i, -64), ivec3(123, 2, 123), vec3(0.8, 0.6, 0.1), vec3(0.3)) # Base
         make_round(ivec3(-15, i*24 - 40, 30), 20 - 6*i, 10, vec3(0.5, 0.3, 0.3), vec3(0.05)) # guitar body
-        create_block(ivec3(2 + 16*i, 10, -3), ivec3(10, 6, 6), vec3(1, 1, 1), vec3(0.01)) # 鼓架
-        make_round2(ivec3(-5 + i*40, 10, -3), 14, 10, vec3(0.2, 0.3, 0.2), vec3(0.01)) # tom drum
-        make_round2(ivec3(-5 + i*40, 19, -3), 12, 1, vec3(1, 1, 1), vec3(0.01)) # tom drum2
+        create_block(ivec3(2 + 16*i, 10, -10), ivec3(10, 6, 6), vec3(1, 1, 1), vec3(0.01)) # 鼓架
+        make_round2(ivec3(-5 + i*40, 10, -10), 14, 10, vec3(0.2, 0.3, 0.2), vec3(0.01)) # tom drum
+        make_round2(ivec3(-5 + i*40, 19, -10), 12, 1, vec3(1, 1, 1), vec3(0.01)) # tom drum2
+    create_block(ivec3(12, 2, -10), ivec3(6, 14, 6), vec3(1, 1, 1), vec3(0.01)) # 鼓架
     create_block(ivec3(-18, -12, 36), ivec3(6, 40, 4), vec3(0.5, 0.4, 0.4), vec3(0.01)) # guitar neck
     create_block(ivec3(-19, 28, 36), ivec3(8, 13, 4), vec3(0.5, 0.3, 0.3), vec3(0.01)) # guitar neck2
     create_block(ivec3(-21, -35, 35), ivec3(12, 2, 5), vec3(0.1, 0.1, 0.1), vec3(0.01)) # guitar pillow
     make_round(ivec3(-15, -22, 35), 5, 5, vec3(0.1, 0.1, 0.1), vec3(0.0)) # hole
     make_round(ivec3(13, -30, -25), 32, 20, vec3(0.2, 0.3, 0.2), vec3(0.0)) # kick drum1
     make_round(ivec3(13, -30, -4), 30, 1, vec3(0.8, 0.9, 0.9), vec3(0.0)) # kick drum2
-    create_block(ivec3(12, 6, -3), ivec3(6, 10, 6), vec3(1, 1, 1), vec3(0.01)) # 鼓架
     make_round2(ivec3(45, -10, -30), 14, 10, vec3(0.2, 0.3, 0.2), vec3(0.0)) # snare
     make_round2(ivec3(45, -1, -30), 12, 1, vec3(1, 1, 1), vec3(0.0)) # snare2
     create_block(ivec3(45, -60, -30), ivec3(2, 50, 2), vec3(1., 1., 1.), vec3(0.0)) # snare3
