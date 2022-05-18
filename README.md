@@ -10,8 +10,8 @@
 
 ### Instruments
 <figure class="half">
-<img src="instruments0.jpg" width="45%">
-<img src="instruments1.jpg" width="45%">
+<img src="screenshot/instruments1.jpg" width="45%">
+<img src="screenshot/instruments2.jpg" width="45%">
 </figure>
 
 ---
